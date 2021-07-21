@@ -4,12 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -44,12 +48,19 @@ public class ContactRecViewAdapter extends RecyclerView.Adapter<ContactRecViewAd
         //position get from recViewadapter
         // the most important method, from this can set onlickListener to every UI elements
         holder.txtName.setText(contacts.get(position).getName());
+        holder.txtEmail.setText(contacts.get(position).getEmail());
+
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, contacts.get(position).getName() + " Selected",Toast.LENGTH_SHORT).show();
             }
         });
+
+        Glide.with(context)
+                .asBitmap()
+                .load(contacts.get(position).getImageUrl())
+                .into(holder.image);
     }
 
     @Override
@@ -66,13 +77,18 @@ public class ContactRecViewAdapter extends RecyclerView.Adapter<ContactRecViewAd
 
     //hold the view for every item in recycle view, generating view objects
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtName ;
-        private RelativeLayout parent ;
+        private TextView txtName , txtEmail;
+        private CardView parent ;
+        private ImageView image ;
+
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
             //because this is not main activity, we need to put itemView
             txtName = itemView.findViewById(R.id.txtName);
             parent = itemView.findViewById(R.id.parent);
+            txtEmail = itemView.findViewById(R.id.txtEmail);
+
+            image = itemView.findViewById(R.id.image);
         }
     }
 }

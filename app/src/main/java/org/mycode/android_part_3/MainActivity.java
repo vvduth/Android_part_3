@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         adapter.setContacts(contacts);
 
         contactsRecView.setAdapter(adapter);
-        //contactsRecView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false));  //display our items on a linear fashion
-        contactsRecView.setLayoutManager(new GridLayoutManager(this, 2 ));
+        contactsRecView.setLayoutManager(new LinearLayoutManager(this));  //display our items on a linear fashion
+        //contactsRecView.setLayoutManager(new GridLayoutManager(this, 2 ));
 
     }
 }
