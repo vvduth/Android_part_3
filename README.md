@@ -12,7 +12,7 @@ Just display the pic, email and the name of people in the contact list
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
-## Some Screenshot
+## Some Screenshots
 <img src="https://raw.githubusercontent.com/vvduth/Android_part_3/master/TAHapps3.png" />
 <img src="https://raw.githubusercontent.com/vvduth/Android_part_3/master/tahapps2.png" />
 <img src="https://raw.githubusercontent.com/vvduth/Android_part_3/master/TahApps.png" />
